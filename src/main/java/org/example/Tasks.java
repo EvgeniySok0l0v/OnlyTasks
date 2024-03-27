@@ -15,7 +15,7 @@ public class Tasks {
      * Orange, Banana, Apple.
      */
     public static void printThreeWords() {
-        logger.info("Orange, Banana, Apple.");
+        logger.info("\nOrange,\nBanana,\nApple.");
     }
 
     /**
