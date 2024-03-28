@@ -30,7 +30,7 @@ public class Main {
         Tasks.checkNumber(-1);
         //Task 7
         logger.info("Task 7 result:");
-        logger.info(Boolean.toString(Tasks.isPositive(1)));
+        logger.info(Boolean.toString(Tasks.isNegative(1)));
         //Task 8
         logger.info("Task 8 result:");
         Tasks.printStrings(2,"xyz");
@@ -55,8 +55,6 @@ public class Main {
         logger.info("Task 14 result:");
         logger.info(Arrays.toString(Tasks.initialArr(3,7)));
     }
-
-
 }
 
 

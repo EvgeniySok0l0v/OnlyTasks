@@ -88,8 +88,8 @@ public class Tasks {
      * 7. Напишите метод, которому в качестве параметра передается целое число. Метод должен вернуть true,
      *  если число отрицательное, и вернуть false если положительное.
      */
-    public static boolean isPositive(int number){
-        return number >= 0;
+    public static boolean isNegative(int number){
+        return number < 0;
     }
 
     /**
@@ -127,8 +127,7 @@ public class Tasks {
             arr[j] = swap(arr[j]);
         }
 
-        if (arr.length % 2 != 0)
-            arr[arr.length / 2] = swap(arr[arr.length / 2]);
+        arr[arr.length / 2] = (arr.length % 2 != 0) ? swap(arr[arr.length / 2]) : arr[arr.length / 2];
 
         return arr.clone();
     }
@@ -162,8 +161,7 @@ public class Tasks {
         int[] arr = new int[]{ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 };
 
         for(int i = 0; i < arr.length; i++){
-            if(arr[i] < 6)
-                arr[i] = arr[i] * 2;
+            arr[i] = arr[i] < 6 ? arr[i] * 2 : arr[i];
         }
 
         return arr.clone();
