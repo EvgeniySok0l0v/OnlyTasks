@@ -3,6 +3,8 @@ package org.example;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+
 public class Main {
 
     //logger
@@ -61,7 +63,16 @@ public class Main {
 
         Park park = new Park("Any name");
         Park.Attraction attraction1 = park.new Attraction("anyName1", 12, "10:00 - 19:30");
-        logger.info(attraction1.toString());
+        Park.Attraction attraction2 = park.new Attraction("anyName2", 9, "10:00 - 20:30");
+        park.setAttractions(List.of(
+                attraction1,
+                attraction2
+        ));
 
+        for(Park.Attraction attraction : park.getAttractions()){
+            logger.info(attraction.toString());
+        }
+
+        //logger.info(park.toString());
     }
 }
