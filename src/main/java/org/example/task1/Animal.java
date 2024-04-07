@@ -1,7 +1,11 @@
 package org.example.task1;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public abstract class Animal implements Counter {
 
+    private static final Logger logger = LoggerFactory.getLogger(Animal.class);
     protected String name;
     protected int currentRunConstraint = 0;
     protected int currentSwimConstraint = 0;
@@ -26,7 +30,9 @@ public abstract class Animal implements Counter {
 
     protected abstract void run(int distance);
 
-    protected abstract void swim(int distance);
+    protected void swim(int distance){
+        logger.info("По идеи оно:{} проплывет на {}, но  это не точно", name, distance);
+    };
 
     @Override
     public int count() {

@@ -13,7 +13,8 @@ public class Main {
         dog2.run(455);
         Animal cat = new Cat();
 
-        System.out.println(dog.count());
-        System.out.println(cat.count());
+        System.out.println(dog.getCurrentRunConstraint());
+        System.out.println(dog2.getCurrentRunConstraint());
+        //System.out.println(cat.count());
     }
 }

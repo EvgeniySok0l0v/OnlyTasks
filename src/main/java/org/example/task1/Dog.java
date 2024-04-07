@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 public class Dog extends Animal {
 
     private static final Logger logger = LoggerFactory.getLogger(Dog.class);
-    protected static int dogCount = 0;
+    private static int dogCount = 0;
 
     public Dog() {
         super();
@@ -28,6 +28,11 @@ public class Dog extends Animal {
         return super.getCurrentSwimConstraint();
     }
 
+    /**
+     * Method run for Dog
+     *
+     * @param distance - distance
+     */
     @Override
     public void run(int distance) {
         int runResult = ConstraintConstants.DOG_RUN - distance - getCurrentRunConstraint();
@@ -40,6 +45,11 @@ public class Dog extends Animal {
         }
     }
 
+    /**
+     * Method swim for Dog
+     *
+     * @param distance - distance
+     */
     @Override
     public void swim(int distance) {
         int swimResult = ConstraintConstants.DOG_RUN - distance - getCurrentSwimConstraint();
@@ -52,6 +62,11 @@ public class Dog extends Animal {
         }
     }
 
+    /**
+     * Method count Dogs
+     *
+     * @return value of dogCount
+     */
     @Override
     public int count() {
         return dogCount;
