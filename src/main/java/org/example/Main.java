@@ -2,6 +2,9 @@ package org.example;
 
 import org.example.task1.Cat;
 import org.example.task1.Dog;
+import org.example.task2.Circle;
+import org.example.task2.Rectangle;
+import org.example.task2.Triangle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,5 +36,14 @@ public class Main {
 
         cats.forEach(cat -> bowl.feed(cat, 10));
         cats.forEach(cat -> logger.info("{} сыт? - {}", cat.getName(), cat.isWellFed()));
+
+        //вывод для task 2
+        //вроде все ок
+        Rectangle rectangle = new Rectangle("красный","желтый", 10, 4);
+        logger.info(rectangle.toString());
+        Circle circle = new Circle("коричневый", "розовый", 2);
+        logger.info(circle.toString());
+        Triangle triangle = new Triangle("оранжевый", "зеленый", 2,3,4);
+        logger.info(triangle.toString());
     }
 }
