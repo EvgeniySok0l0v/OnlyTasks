@@ -1,5 +1,8 @@
 package org.example.task1;
 
+/**
+ * Class for ConstraintConstants
+ */
 public class ConstraintConstants {
 
     public static int DOG_RUN = 500;

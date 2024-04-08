@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9381f903-cb58-4b6f-be97-c56cc7300efa" name="Changes" comment="cat+dog">
+    <list default="true" id="9381f903-cb58-4b6f-be97-c56cc7300efa" name="Changes" comment="методы  для cat">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task1/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task1/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task1/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task1/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task1/ConstraintConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task1/ConstraintConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task1/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task1/Counter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/task1/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/task1/Dog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1712004312417</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="методы  для cat">
+      <created>1712504404423</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712504404423</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,6 +112,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="cat+dog" />
-    <option name="LAST_COMMIT_MESSAGE" value="cat+dog" />
+    <MESSAGE value="методы  для cat" />
+    <option name="LAST_COMMIT_MESSAGE" value="методы  для cat" />
   </component>
 </project>
