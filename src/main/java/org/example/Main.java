@@ -24,6 +24,9 @@ public class Main {
 
         logger.info(uniqueWords(words).toString());
         logger.info(countRepetitions(words).toString());
+
+        PhoneBook.add("+375331234567", "Соколов");
+        logger.info(PhoneBook.get("Соколов"));
     }
 
     /**
