@@ -82,7 +82,7 @@ public class MtsTest {
     }
 
     @Test
-    void checkContinueButTest() throws InterruptedException {
+    void checkContinueButTest() {
         WebElement phone = driver.findElement(By.xpath("//*[@id=\"connection-phone\"]"));
         phone.click();
         phone.clear();
