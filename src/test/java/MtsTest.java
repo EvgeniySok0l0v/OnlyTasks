@@ -4,20 +4,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
-import java.util.stream.Collectors;
 
 
 public class MtsTest {
 
     private WebDriver driver;
     private static final String URL = "https://www.mts.by";
-    private final String baseElement = "//*[@id=\"pay-section\"]/div/div/div[2]/section/div";
 
+    private final String baseDropDown = "//*[@id=\"pay-section\"]/div/div/div[2]/section/div/div[1]/div[1]/div[2]/button/span[2]";
+    private final String selectedItem = "//*[@id=\"pay-section\"]/div/div/div[2]/section/div/div[1]/div[1]/div[2]/ul/li[";
     @BeforeAll
     static void setupClass() {
         WebDriverManager.chromedriver().setup();
@@ -39,50 +39,7 @@ public class MtsTest {
     }
 
     @Test
-    void blockNameTest() {
-        String actual = driver
-                .findElement(By.xpath(baseElement+ "/h2")).getText();
-        String expected = "Онлайн пополнение\nбез комиссии";
-
-        Assertions.assertEquals(expected,actual);
-    }
-
-    @Test
-    void checkLogosTest(){
-        List<WebElement> logos = driver
-                .findElements(By.xpath(baseElement + "/div[2]/ul/li"));
-
-        List<String> actual = logos.stream()
-                .map(l -> l.findElement(By.cssSelector("img")).getAttribute("alt"))
-                .collect(Collectors.toList());
-
-        List<String> expected = List.of(
-                "Visa",
-                "Verified By Visa",
-                "MasterCard",
-                "MasterCard Secure Code",
-                "Белкарт",
-                "МИР");
-
-        Assertions.assertEquals(expected,actual);
-    }
-
-
-    @Test
-    void checkLinkAboutServiceTest(){
-        WebElement linkAboutService = driver
-                .findElement(By.xpath(baseElement + "/a"));
-        linkAboutService.click();
-
-        String actualLink = driver.getCurrentUrl();
-        String expectedLink = "https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/";
-
-        //driver.navigate().back();
-        Assertions.assertEquals(expectedLink,actualLink);
-    }
-
-    @Test
-    void checkContinueButTest() {
+    void checkSumAfterContinue(){
         WebElement phone = driver.findElement(By.xpath("//*[@id=\"connection-phone\"]"));
         phone.click();
         phone.clear();
@@ -109,11 +66,134 @@ public class MtsTest {
         driver.switchTo().frame(frameElement);
         WebElement spanElementInsideIframe = wait
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-                        "/html/body/app-root/div/div/div/app-payment-container/section/div/div/span")));
+                        "/html/body/app-root/div/div/div/app-payment-container/section/div/div/div")));
+        WebElement butElementInsideIframe = wait
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+                        "/html/body/app-root/div/div/div/" +
+                                "app-payment-container/section/div/app-card-page/div/div[1]/button")));
 
         String actual = spanElementInsideIframe.getText();
-        String expected = "Оплата: Услуги связи Номер:375297777777";
+        String expected = "1.00 BYN";
 
+        String actualButText = spanElementInsideIframe.getText();
+        String expectedButText = "1.00 BYN";
+
+        //assert text
         Assertions.assertEquals(expected,actual);
+        //assert but text
+        Assertions.assertEquals(expectedButText,actualButText);
+    }
+
+    @Test
+    void checkCommunicationServicesPlaceholders(){
+        String actualPhone = driver
+                .findElement(By.xpath("//*[@id=\"connection-phone\"]")).getAttribute("placeholder");
+
+        String actualSum = driver
+                .findElement(By.xpath("//*[@id=\"connection-sum\"]")).getAttribute("placeholder");
+
+        String actualEmail = driver
+                .findElement(By.xpath("//*[@id=\"connection-email\"]")).getAttribute("placeholder");
+
+        String expectedPhone = "Номер телефона";
+        String expectedSum = "Сумма";
+        String expectedEmail = "E-mail для отправки чека";
+
+        Assertions.assertEquals(expectedPhone,actualPhone);
+        Assertions.assertEquals(expectedSum,actualSum);
+        Assertions.assertEquals(expectedEmail,actualEmail);
+    }
+
+    @Test
+    void checkHomeInternetPlaceholders(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(baseDropDown))).click();
+
+        Actions action = new Actions(driver);
+
+        WebElement homeInternet = driver.findElement(By.xpath(
+                selectedItem + 2 + "]/p"));
+
+        action.moveToElement(homeInternet);
+        action.perform();
+
+        String actualPhone = driver
+                .findElement(By.xpath("//*[@id=\"internet-phone\"]")).getAttribute("placeholder");
+
+        String actualSum = driver
+                .findElement(By.xpath("//*[@id=\"internet-sum\"]")).getAttribute("placeholder");
+
+        String actualEmail = driver
+                .findElement(By.xpath("//*[@id=\"internet-email\"]")).getAttribute("placeholder");
+
+        String expectedPhone = "Номер абонента";
+        String expectedSum = "Сумма";
+        String expectedEmail = "E-mail для отправки чека";
+
+        Assertions.assertEquals(expectedPhone,actualPhone);
+        Assertions.assertEquals(expectedSum,actualSum);
+        Assertions.assertEquals(expectedEmail,actualEmail);
+    }
+
+    @Test
+    void checkInstallmentPlaceholders(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(baseDropDown))).click();
+
+        Actions action = new Actions(driver);
+
+        WebElement homeInternet = driver.findElement(By.xpath(
+                selectedItem + 3 + "]/p"));
+
+        action.moveToElement(homeInternet);
+        action.perform();
+
+        String actualScore = driver
+                .findElement(By.xpath("//*[@id=\"score-instalment\"]")).getAttribute("placeholder");
+
+        String actualSum = driver
+                .findElement(By.xpath("//*[@id=\"instalment-sum\"]")).getAttribute("placeholder");
+
+        String actualEmail = driver
+                .findElement(By.xpath("//*[@id=\"instalment-email\"]")).getAttribute("placeholder");
+
+        String expectedScore = "Номер счета на 44";
+        String expectedSum = "Сумма";
+        String expectedEmail = "E-mail для отправки чека";
+
+        Assertions.assertEquals(expectedScore,actualScore);
+        Assertions.assertEquals(expectedSum,actualSum);
+        Assertions.assertEquals(expectedEmail,actualEmail);
+    }
+
+    @Test
+    void checkВebtPlaceholders(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(baseDropDown))).click();
+
+        Actions action = new Actions(driver);
+
+        WebElement homeInternet = driver.findElement(By.xpath(
+                selectedItem + 4 + "]/p"));
+
+        action.moveToElement(homeInternet);
+        action.perform();
+
+        String actualScore = driver
+                .findElement(By.xpath("//*[@id=\"score-arrears\"]")).getAttribute("placeholder");
+
+        String actualSum = driver
+                .findElement(By.xpath("//*[@id=\"arrears-sum\"]")).getAttribute("placeholder");
+
+        String actualEmail = driver
+                .findElement(By.xpath("//*[@id=\"arrears-email\"]")).getAttribute("placeholder");
+
+        String expectedScore = "Номер счета на 2073";
+        String expectedSum = "Сумма";
+        String expectedEmail = "E-mail для отправки чека";
+
+        Assertions.assertEquals(expectedScore,actualScore);
+        Assertions.assertEquals(expectedSum,actualSum);
+        Assertions.assertEquals(expectedEmail,actualEmail);
     }
 }

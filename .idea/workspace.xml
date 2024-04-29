@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9381f903-cb58-4b6f-be97-c56cc7300efa" name="Changes" comment="lesson13 tasks">
+    <list default="true" id="9381f903-cb58-4b6f-be97-c56cc7300efa" name="Changes" comment="delete throws">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/MtsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MtsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Lesson_12_junit_5" />
+        <entry key="$PROJECT_DIR$" value="Lesson_13" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,41 +57,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MtsTest.blockNameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MtsTest.checkCommunicationServicesPlaceholders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OnlyTasks" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MtsTest" />
-      <option name="METHOD_NAME" value="blockNameTest" />
+      <option name="METHOD_NAME" value="checkCommunicationServicesPlaceholders" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MtsTest.checkContinueButTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MtsTest.checkHomeInternetPlaceholders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OnlyTasks" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MtsTest" />
-      <option name="METHOD_NAME" value="checkContinueButTest" />
+      <option name="METHOD_NAME" value="checkHomeInternetPlaceholders" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MtsTest.checkLinkAboutServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MtsTest.checkInstallmentPlaceholders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OnlyTasks" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MtsTest" />
-      <option name="METHOD_NAME" value="checkLinkAboutServiceTest" />
+      <option name="METHOD_NAME" value="checkInstallmentPlaceholders" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MtsTest.checkLogosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MtsTest.checkSumAfterContinue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OnlyTasks" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MtsTest" />
-      <option name="METHOD_NAME" value="checkLogosTest" />
+      <option name="METHOD_NAME" value="checkSumAfterContinue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -99,10 +100,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.MtsTest" />
-        <item itemvalue="JUnit.MtsTest.blockNameTest" />
-        <item itemvalue="JUnit.MtsTest.checkContinueButTest" />
-        <item itemvalue="JUnit.MtsTest.checkLinkAboutServiceTest" />
-        <item itemvalue="JUnit.MtsTest.checkLogosTest" />
+        <item itemvalue="JUnit.MtsTest.checkInstallmentPlaceholders" />
+        <item itemvalue="JUnit.MtsTest.checkHomeInternetPlaceholders" />
+        <item itemvalue="JUnit.MtsTest.checkCommunicationServicesPlaceholders" />
+        <item itemvalue="JUnit.MtsTest.checkSumAfterContinue" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1714405839697</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="delete throws">
+      <created>1714405959945</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714405959945</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,17 +155,7 @@
     <MESSAGE value="123" />
     <MESSAGE value="factorial method" />
     <MESSAGE value="lesson13 tasks" />
-    <option name="LAST_COMMIT_MESSAGE" value="lesson13 tasks" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/MtsTest.java</url>
-          <line>114</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="delete throws" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete throws" />
   </component>
 </project>
