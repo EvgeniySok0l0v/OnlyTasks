@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9381f903-cb58-4b6f-be97-c56cc7300efa" name="Changes" comment="lesson14 tasks">
+    <list default="true" id="9381f903-cb58-4b6f-be97-c56cc7300efa" name="Changes" comment="Lesson 17 task">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/allure.properties.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MtsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MtsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Lesson_13" />
+        <entry key="$PROJECT_DIR$" value="Lesson_14" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -30,23 +33,31 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:/Maven/apache-maven-3.9.6/bin" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2dzlxkh1ApnEHrrGhma0g3UhcTn" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Aston/Tasks/OnlyTasks&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Aston/Tasks/OnlyTasks",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.MtsTest">
+}]]></component>
+  <component name="RunManager" selected="JUnit.MtsTest.checkSumAfterContinue">
     <configuration name="MtsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OnlyTasks" />
       <option name="PACKAGE_NAME" value="" />
@@ -98,11 +109,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MtsTest.checkSumAfterContinue" />
         <item itemvalue="JUnit.MtsTest" />
         <item itemvalue="JUnit.MtsTest.checkInstallmentPlaceholders" />
         <item itemvalue="JUnit.MtsTest.checkHomeInternetPlaceholders" />
         <item itemvalue="JUnit.MtsTest.checkCommunicationServicesPlaceholders" />
-        <item itemvalue="JUnit.MtsTest.checkSumAfterContinue" />
       </list>
     </recent_temporary>
   </component>

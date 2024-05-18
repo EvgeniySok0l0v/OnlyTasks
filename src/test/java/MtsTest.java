@@ -1,4 +1,8 @@
+import com.google.common.base.Supplier;
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+import io.qameta.allure.*;
+
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+
 
 
 public class MtsTest {
@@ -39,51 +44,91 @@ public class MtsTest {
     }
 
     @Test
+    @Epic("Payments")
+    @Feature("Payment Processing")
+    @Story("Check Sum After Continue")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("This test checks if the sum after clicking continue is displayed correctly.")
     void checkSumAfterContinue(){
-        WebElement phone = driver.findElement(By.xpath("//*[@id=\"connection-phone\"]"));
-        phone.click();
-        phone.clear();
-        phone.sendKeys("297777777");
-
-        WebElement sum = driver.findElement(By.xpath("//*[@id=\"connection-sum\"]"));
-        sum.click();
-        sum.clear();
-        sum.sendKeys("1");
-
-        WebElement email = driver.findElement(By.xpath("//*[@id=\"connection-email\"]"));
-        email.click();
-        email.clear();
-        email.sendKeys("123@mail.ru");
-
-        WebElement but = driver.findElement(By.xpath("//*[@id=\"pay-connection\"]/button"));
-        but.click();
+        enterPhoneNumber("297777777");
+        enterSum("1");
+        enterEmail("123@mail.ru");
+        clickPayButton();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-        WebElement frameElement = wait
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("bepaid-iframe")));
-
+        WebElement frameElement = waitForFrame(wait);
         driver.switchTo().frame(frameElement);
-        WebElement spanElementInsideIframe = wait
-                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-                        "/html/body/app-root/div/div/div/app-payment-container/section/div/div/div")));
-        WebElement butElementInsideIframe = wait
-                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-                        "/html/body/app-root/div/div/div/" +
-                                "app-payment-container/section/div/app-card-page/div/div[1]/button")));
+
+        WebElement spanElementInsideIframe = waitForSpanElementInsideIframe(wait);
+        WebElement butElementInsideIframe = waitForButtonElementInsideIframe(wait);
 
         String actual = spanElementInsideIframe.getText();
         String expected = "1.00 BYN";
 
-        String actualButText = spanElementInsideIframe.getText();
+        String actualButText = butElementInsideIframe.getText();
         String expectedButText = "1.00 BYN";
 
-        //assert text
-        Assertions.assertEquals(expected,actual);
-        //assert but text
-        Assertions.assertEquals(expectedButText,actualButText);
+        assertText(expected, actual);
+        assertButtonText(expectedButText, actualButText);
     }
 
+
+    @Step("Assert text: expected={expected}, actual={actual}")
+    private void assertText(String expected, String actual) {
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Step("Assert button text: expected={expected}, actual={actual}")
+    private void assertButtonText(String expected, String actual) {
+        Assertions.assertEquals(expected, actual);
+    }
+    @Step("Enter phone number: {number}")
+    private void enterPhoneNumber(String number) {
+        WebElement phone = driver.findElement(By.xpath("//*[@id=\"connection-phone\"]"));
+        phone.click();
+        phone.clear();
+        phone.sendKeys(number);
+    }
+
+    @Step("Enter sum: {sum}")
+    private void enterSum(String sum) {
+        WebElement sumElement = driver.findElement(By.xpath("//*[@id=\"connection-sum\"]"));
+        sumElement.click();
+        sumElement.clear();
+        sumElement.sendKeys(sum);
+    }
+
+    @Step("Enter email: {email}")
+    private void enterEmail(String email) {
+        WebElement emailElement = driver.findElement(By.xpath("//*[@id=\"connection-email\"]"));
+        emailElement.click();
+        emailElement.clear();
+        emailElement.sendKeys(email);
+    }
+
+    @Step("Click pay button")
+    private void clickPayButton() {
+        WebElement but = driver.findElement(By.xpath("//*[@id=\"pay-connection\"]/button"));
+        but.click();
+    }
+
+    @Step("Wait for payment iframe")
+    private WebElement waitForFrame(WebDriverWait wait) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("bepaid-iframe")));
+    }
+
+    @Step("Wait for span element inside iframe")
+    private WebElement waitForSpanElementInsideIframe(WebDriverWait wait) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+                "/html/body/app-root/div/div/div/app-payment-container/section/div/div/div")));
+    }
+
+    @Step("Wait for button element inside iframe")
+    private WebElement waitForButtonElementInsideIframe(WebDriverWait wait) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+                "/html/body/app-root/div/div/div/app-payment-container/section/div/app-card-page/div/div[1]/button")));
+    }
     @Test
     void checkCommunicationServicesPlaceholders(){
         String actualPhone = driver
