@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9381f903-cb58-4b6f-be97-c56cc7300efa" name="Changes" comment="прикрутил allure" />
+    <list default="true" id="9381f903-cb58-4b6f-be97-c56cc7300efa" name="Changes" comment="123">
+      <change afterPath="$PROJECT_DIR$/src/test/java/steps/PaymentSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MtsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/MtsTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,18 +45,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Aston/Tasks/OnlyTasks",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Aston/Tasks/OnlyTasks&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="JUnit.MtsTest.checkSumAfterContinue">
+}</component>
+  <component name="RunManager" selected="JUnit.MtsTest">
     <configuration name="MtsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OnlyTasks" />
       <option name="PACKAGE_NAME" value="" />
@@ -67,16 +71,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MtsTest" />
       <option name="METHOD_NAME" value="checkCommunicationServicesPlaceholders" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MtsTest.checkHomeInternetPlaceholders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OnlyTasks" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MtsTest" />
-      <option name="METHOD_NAME" value="checkHomeInternetPlaceholders" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -102,13 +96,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MtsTest.checkВebtPlaceholders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OnlyTasks" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MtsTest" />
+      <option name="METHOD_NAME" value="checkВebtPlaceholders" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MtsTest.checkSumAfterContinue" />
         <item itemvalue="JUnit.MtsTest" />
-        <item itemvalue="JUnit.MtsTest.checkInstallmentPlaceholders" />
-        <item itemvalue="JUnit.MtsTest.checkHomeInternetPlaceholders" />
+        <item itemvalue="JUnit.MtsTest.checkВebtPlaceholders" />
         <item itemvalue="JUnit.MtsTest.checkCommunicationServicesPlaceholders" />
+        <item itemvalue="JUnit.MtsTest.checkSumAfterContinue" />
+        <item itemvalue="JUnit.MtsTest.checkInstallmentPlaceholders" />
       </list>
     </recent_temporary>
   </component>
@@ -156,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716039761055</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="123">
+      <created>1716384087942</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716384087942</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -171,12 +182,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="123" />
     <MESSAGE value="factorial method" />
     <MESSAGE value="lesson13 tasks" />
     <MESSAGE value="delete throws" />
     <MESSAGE value="lesson14 tasks" />
     <MESSAGE value="прикрутил allure" />
-    <option name="LAST_COMMIT_MESSAGE" value="прикрутил allure" />
+    <MESSAGE value="123" />
+    <option name="LAST_COMMIT_MESSAGE" value="123" />
   </component>
 </project>
